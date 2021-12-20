@@ -1,0 +1,52 @@
+<div 
+*ngIf="resultsDataService.data"
+class="container">
+  <div class="card m-1 p-0 shadow">
+    <h5 class="card-header">{{ book.volumeInfo.title }}</h5>
+    <div class="card-body row">
+      <div class="col-sm-12 col-md-4 col-lg-3 mb-sm-5">
+        <img src="{{ resultsDataService.getThumbnailUrl(selectedId) }}" width="200" alt="...">
+        <p class="card-text pt-4">
+          <b>Authors:</b> {{resultsDataService.getAuthors(book.id)}}
+        </p>
+        <p class="card-text">
+          <b>Published:</b> {{book.volumeInfo.publishedDate}}
+        </p>
+        <p class="card-text pb-3">
+          <b>Publisher:</b> {{book.volumeInfo.publisher}}
+        </p>
+        <span class=""
+        *ngFor="let isbn of resultsDataService.getISBN(book.id)">
+            <br>{{isbn}}
+        </span>
+      </div>
+      <div class="col-sm-12 col-md-8 col-lg-9 d-flex flex-column justify-content-between">
+        <div class="lead card-text flex-grow-1"
+        *ngIf="!book.volumeInfo.description;
+        else other"
+        >
+          <h5 class="card-title pb-4">Description:</h5>
+          N/A
+        </div>
+        <ng-template #other
+        class="lead flex-grow-1">
+          <h5 class="card-title pb-4">Description:</h5>
+          {{book.volumeInfo.description}}
+        </ng-template> 
+        <div class="row justify-content-end pt-4 flex-shrink-1">
+          <div class="col-4"
+          *ngIf="book.volumeInfo.previewLink">
+            <a href="{{book.volumeInfo.previewLink}}" class="btn btn-outline-secondary btn-block w-100" target="_blank">Preview</a></div>
+          <div class="col-4"
+          *ngIf="book.saleInfo.buyLink">
+            <a href="{{book.saleInfo.buyLink}}"
+            class="btn btn-outline-secondary btn-block w-100" target="_blank">Buy book</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+   
+     
