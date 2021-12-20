@@ -1,6 +1,10 @@
 # Bookbro
 
+Book finder that consumes Google Books API
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
+
+## [View Demo](https://mozvik.github.io/bookbro/)
 
 ## Development server
 
