@@ -23,8 +23,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "bookbro/src/assets"
+              "src/assets",
+              "src/favicon.ico"
+
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",

@@ -7,7 +7,7 @@ import { catchError, Observable, of } from 'rxjs';
 })
 export class APIService {
   serverUrl: string = 'https://www.googleapis.com/books/v1';
-  apiKey: string = 'AIzaSyA6ZPpKHKJkZKlGF1CDrfdmBYHFpekQC1A';
+  apiKey: string = '';
   observables: any = {}
 
   constructor(
