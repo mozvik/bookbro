@@ -6,7 +6,7 @@ export class Results {
   public data: any
   public currentPage: number = 0
   public queryString: string = ''
-  private noThumbnail: string = '/assets/book.svg'
+  private noThumbnail: string = 'assets/book.svg'
 
   constructor() { }
   
