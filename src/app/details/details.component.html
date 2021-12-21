@@ -12,9 +12,16 @@ class="container">
         <p class="card-text">
           <b>Published:</b> {{book.volumeInfo.publishedDate}}
         </p>
-        <p class="card-text pb-3">
+        <p class="card-text">
           <b>Publisher:</b> {{book.volumeInfo.publisher}}
         </p>
+        <p *ngIf="book.volumeInfo.pageCount" class="card-text">
+          <b>Page count:</b> {{book.volumeInfo.pageCount}}
+        </p>
+        <p *ngIf="book.volumeInfo.averageRating" class="card-text  pb-3">
+          <b>Average rating: </b><span [innerHTML]="stars" class="text-warning"></span>
+        </p>
+        
         <span class=""
         *ngFor="let isbn of resultsDataService.getISBN(book.id)">
             <br>{{isbn}}
