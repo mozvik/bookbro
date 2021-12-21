@@ -56,19 +56,10 @@ export class APIService {
   searchForBooks(query: string, page: number = 0): Observable<any> {
     let url
     if (this.isValidISBN10(query) || this.isValidISBN13(query)) {
-      url = this.serverUrl +
-        '/volumes?q=' +
-        'isbn:' + query +
-        '&startIndex=' + page +
-        '&maxResults=10' +
-        '&?key=' + this.apiKey
+      url = `${this.serverUrl}/volumes?q=isbn:${query}&startIndex=${page * 10}&maxResults=10&?key=${this.apiKey}`
     }
     else {
-      url = this.serverUrl +
-        '/volumes?q=' + query +
-        '&startIndex=' + page +
-        '&maxResults=10' +
-        '&?key=' + this.apiKey
+      url = `${this.serverUrl}/volumes?q=${query}+intitle:${query}&startIndex=${page * 10}&maxResults=10&?key=${this.apiKey}`
     }
     return this.http.get<any[]>(url)
       .pipe(
