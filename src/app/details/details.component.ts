@@ -24,7 +24,6 @@ export class DetailsComponent implements OnInit {
     this.selectedId = this.route.snapshot.paramMap.get('data.id')
     this.book = this.resultsDataService.getBookById(this.selectedId)
     if (this.book.volumeInfo.averageRating) this.stars = this.generateStarsHTML(this.book.volumeInfo.averageRating)
-    console.log('this.book :>> ', this.book);
   }
 
   private generateStarsHTML(rating: number): string {

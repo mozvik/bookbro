@@ -12,7 +12,6 @@ export class ResultsComponent implements OnInit {
   ) {} 
     
   ngOnDestroyed(): void {
-    console.log('ResultsComponent Destroyed :>> ');
   }
   ngOnInit(): void { }
   
