@@ -8,7 +8,7 @@ import { ResultsDataService } from 'src/app/service/results-data.service';
 })
 export class ResultsComponent implements OnInit {
   constructor(
-    public resultsDataService: ResultsDataService,
+    public resultsDataService: ResultsDataService
   ) {} 
     
   ngOnDestroyed(): void {

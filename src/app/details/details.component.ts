@@ -15,7 +15,7 @@ export class DetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    public resultsDataService: ResultsDataService,) { }
+    public resultsDataService: ResultsDataService) { }
 
   ngOnInit(): void {
     if (!this.resultsDataService.data) {
