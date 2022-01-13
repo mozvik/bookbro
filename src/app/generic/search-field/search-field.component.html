@@ -1,12 +1,23 @@
 <div class="container-fluid py-5" id="search-bg">
   <div class="form-container-base row">
     <form 
-    class="col-sm-12 col-md-8 col-lg-6 mx-auto" id="submit-search"
+    id="submit-search"
+    class="col-sm-12 col-md-8 col-lg-6 mx-auto" 
     style="max-width: 400px;">
       <div class="input-group">
-        <input type="text" class="form-control shadow-none" aria-label="Text input with segmented dropdown button" [placeholder]="placeholder" name="searchField" [(ngModel)]="value"  id="searchInputField" >
-        <button type="submit" class="btn btn-dark opacity-75" id="searchSubmitButton"
-         (click)="onClick($event)">
+        <input 
+        id="searchInputField"
+        type="text"
+        class="form-control shadow-none" 
+        aria-label="Text input with segmented dropdown button" 
+        [placeholder]="placeholder" 
+        name="searchField" 
+        [(ngModel)]="value"   >
+        <button
+        id="searchSubmitButton" 
+        class="btn btn-dark opacity-75" 
+        type="submit" 
+        (click)="onClick($event)">
         <i class="fa fa-search"></i>
         </button>
       </div>

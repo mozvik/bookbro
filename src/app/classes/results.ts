@@ -22,10 +22,18 @@ export class Results {
     let book: any = this.getBook(bookId)
     
     if (book && book.volumeInfo.imageLinks) {
-      if(book.volumeInfo.imageLinks.thumbnail) return book.volumeInfo.imageLinks.thumbnail
-      else if(book.volumeInfo.imageLinks.smallThumbnail) return book.volumeInfo.imageLinks.smallThumbnail
-      else return this.noThumbnail
-    } else return this.noThumbnail
+      if (book.volumeInfo.imageLinks.thumbnail) {
+        return book.volumeInfo.imageLinks.thumbnail
+      }
+      else if (book.volumeInfo.imageLinks.smallThumbnail) {
+        return book.volumeInfo.imageLinks.smallThumbnail
+      }
+      else {
+        return this.noThumbnail
+      }
+    } else {
+      return this.noThumbnail
+    }
   }
   
   getAuthors(bookId: number): string {
